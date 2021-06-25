@@ -1,259 +1,356 @@
-/*===================== RESET ===================================== */
-
+/*====  RESET ============================ */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
+
 img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
-/*===================== Variables ===================================== */
-:root{
-    --header-height: 4.5rem;
-        /* hsl color mode*/ 
-    --hue: 159;
-    --base-color: hsl(var(--hue) 36% 57%);
-    --base-color-second: hsl(var(--hue) 65% 88%);
-    --base-color-alt: hsl(var(--hue) 57% 53%);
-    --title-color: hsl(var(--hue) 41% 10%);
-    --text-color: hsl(0 0% 46%)
-    --text-color-light: hsl(0 0% 98%);
-    --body-color: hsl(0 0% 98%)
+/*====  VARIABLES ============================ */
+:root {
+  --header-height: 4.5rem;
+
+  /* colors */
+  --hue: 159;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
 }
 
-/*===================== BASE ===================================== */
+/*===  BASE ============================ */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font: 400 1rem "DM Sans", sans-serif;
-    color: var(--text-color);
-    background: var(--body-color);
-    /* -webkit é uma propriedade do navegador chrome;*/
-    -webkit-font-smoothing: antialiased;
+  font: 400 1rem 'DM Sans', sans-serif;
+  color: var(--text-color);
+  background: var(--body-color);
+  -webkit-font-smoothing: antialiased;
 }
 
 .title {
-    font: 700 1.875rem "Poppins", sans-serif;
-    -webkit-font-smoothing: auto;
+  font: 700 1.875rem 'Poppins', sans-serif;
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
 }
 
-.button{
-    background: var(--base-color);
-    color: white;
-    height: 3.5rem;
-    display: inline-flex;
-    align-items: center;
-    padding: 0 2rem;
-    border-radius: 0.25rem;
-    font: 500 1rem 'DM Sans', sans-serif;
-    transition: background 0.3s;
+.button {
+  background-color: var(--base-color);
+  color: var(--text-color-light);
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  font: 500 1rem 'DM Sans', sans-serif;
+  transition: background 0.3s;
 }
 
-.button:hover{
-    background: var(--base-color-alt);
+.button:hover {
+  background: var(--base-color-alt);
 }
 
 .divider-1 {
-    height: 2px;
-    background: linear-gradient(
-        270deg,
-        hsla(var(--hue), 36%, 57%, 1) 0%, 
-        hsla(var(--hue), 65%, 88%, 0.34) 100% );
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34)
+  );
 }
 
-/*===================== LAYOUT ===================================== */
-#header {
-    /* #header -- tag mãe tem "width: 100%;", então a tag filho #geader nav também vai precisar de "width: 100%"; */
-    border-bottom: 1px solid #e4e4e4;
-    margin-bottom: 2rem;
-    display: flex;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    /* Tomar cuidado com as variáveis de cor!*/
-    background: var(--body-color);
-    width: 100%;
-    
-        
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
+  );
 }
 
-/* verificar o tamanho do pixel* -- 16px equivale a 1rem então se a distancia é 32px você divide 32/16 = 2rem */
-.container{
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+/*====  LAYOUT ============================ */
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
+
 .grid {
-    display: grid;
-    gap: 2rem;
+  display: grid;
+  gap: 2rem;
 }
+
 .section {
-    padding: 5rem 0;
+  padding: 5rem 0;
+}
+
+.section .title {
+  margin-bottom: 1rem;
+}
+
+.section header {
+  margin-bottom: 4rem;
+}
+
+.section header strong {
+  color: var(--base-color);
+}
+
+#header {
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 2rem;
+  display: flex;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--body-color);
+  width: 100%;
+}
+
+#header.scroll {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
 }
 
 main {
-    margin-top: calc(var(--header-height) + 2rem);
+  margin-top: calc(var(--header-height) + 2rem);
 }
-/*===================== LOGO ===================================== */
 
-.logo{
-    font: 700 1.31rem "Poppins", sans-serif;
-    color: var(--title-color);
-
+/*====  LOGO ============================ */
+.logo {
+  font: 700 1.31rem 'Poppins', sans-serif;
+  color: var(--title-color);
 }
 
 .logo span {
-    /* altera a parte do "salon" */ 
-    color: var(--base-color);
+  color: var(--base-color);
 }
 
-/*===================== NAVIGATION ===================================== */
-
-/*  you can use just  nav or nav.container*/
-#header nav {
-    height: var(--header-height);
-    display: flex;
-    align-items: center;
-    /* you can use flex-end or space-between */ 
-    justify-content: space-between;
-    width: 100%;
+/*====  NAVIGATION ============================ */
+nav {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
-/* deixe o mouse em cima do nav ul.grid para saber a especificidade ou seja (0,1,0) < (0,1,2)*/
 
 nav ul li {
-    text-align: center;
-
+  text-align: center;
 }
 
-nav ul li a{
-    transition: color 0.3s;
-    position: relative;
-}
-nav ul li a:hover{
-    color: var(--base-color);
+nav ul li a {
+  transition: color 0.2s;
+  position: relative;
 }
 
-nav ul li a:after{
-    content: '';
-    width: 0%;
-    height: 2px;
-    
-    background: var(--base-color);
-    position: absolute;
-    left: 0;
-    bottom: -1.5rem;
-
+nav ul li a:hover {
+  color: var(--base-color);
 }
 
-nav ul li a:hover::after{
-    width: 100%;
-    transition:  0.3s;
-}
-nav .menu{
-    opacity: 0;
-    visibility: hidden;
-    
-}
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--base-color);
 
-/*===================  show menu ===========================================*/
-nav.show .menu{
-    opacity: 1;
-    visibility: visible;
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
 
-    background: var(--body-color);
-
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
+  transition: width 0.2s;
 }
 
-nav.show .menu{
-    display: grid;
-    place-content: center;
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
+}
+
+nav .menu ul {
+  display: none;
+}
+
+/* Mostrar menu */
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  place-content: center;
+}
+
+nav.show .menu ul {
+  display: grid;
 }
 
 nav.show ul.grid {
-    gap: 4rem;
+  gap: 4rem;
 }
 
+/* toggle menu */
+.toggle {
+  color: var(--base-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 
-/* toggle menu  (toggle == interruptor*/
+nav .icon-close {
+  visibility: hidden;
+  opacity: 0;
 
-nav .icon-close{
-    visibility: hidden;
-    opacity: 0;
+  position: absolute;
+  top: -1.5rem;
+  right: 1.5rem;
 
-    position: absolute;
+  transition: 0.2s;
 }
 
 nav.show div.icon-close {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
 }
 
-/*===================== HOME ===================================== */
-
+/*====  HOME ============================ */
 #home {
-    /* overflow - significa transbordar */
-    overflow: hidden;
+  overflow: hidden;
 }
 
-#home .container{
-    /* config para aumentar ou diminuir margem da seção escolhida*/
-    margin: 0;
+#home .container {
+  margin: 0;
 }
 
-#home .image{
-    position: relative;
+#home .image {
+  position: relative;
 }
 
-#home .image::before{
-    content: '';
-    height: 100%;
-    width: 100%;
-    background:var(--base-color-second);
-    position: absolute;
-    /* era -16.8, mas troquei para -10 pois na página do Desktop redimensiona melhor  */
-    top: -16.8%;
-    left: 16.7%;
-    z-index: 0;
-
+#home .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -16.8%;
+  left: 16.7%;
+  z-index: 0;
 }
 
-#home .image img{
-    position: relative;
-    right: 2.93rem;
+#home .image img {
+  position: relative;
+  right: 2.93rem;
 }
 
-#home .image img, 
-#home .image::before{
-    border-radius: 0.25rem;
+#home .image img,
+#home .image::before {
+  border-radius: 0.25rem;
 }
 
-#home .text{
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    text-align: center;
+#home .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
 }
 
-#home .text h1{
-    margin-bottom: 1rem;
+#home .text h1 {
+  margin-bottom: 1rem;
 }
 
-#home .text p{
-    margin-bottom: 2rem;
-    max-width: 100%;
+#home .text p {
+  margin-bottom: 2rem;
 }
 
+/*====  ABOUT ============================ */
+#about {
+  background: white;
+}
+
+#about .container {
+  margin: 0;
+}
+
+#about .image {
+  position: relative;
+}
+
+#about .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -8.3%;
+  left: -33%;
+  z-index: 0;
+}
+
+#about .image img {
+  position: relative;
+}
+
+#about .image img,
+#about .image::before {
+  border-radius: 0.25rem;
+}
+
+#about .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/*====  SERVICES ============================ */
+.cards.grid {
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
