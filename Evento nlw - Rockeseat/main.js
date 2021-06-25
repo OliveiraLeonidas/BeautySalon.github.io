@@ -1,3 +1,20 @@
+/* # basic of javascript #
+
+char -- string --> cadeia de caracteres
+number -- 123
+
+variaveis do tipo constantes
+const name = "Leonidas"
+const name "Leividy" --> isto não vai funcionar 
+
+variaveis que mudam:
+var name = "Leonidas"
+var name = "Leividy" --> vai imprimir Leividy no console
+
+alert("No navegador")
+console.log("No terminal")
+
+*/
 /*  abre e fecha o menu quando clicar no icone: hamburguer e x */
 const nav = document.querySelector('#header nav')
 const toggle = document.querySelectorAll('nav .toggle')
