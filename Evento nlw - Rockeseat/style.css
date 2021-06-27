@@ -371,6 +371,17 @@ nav.show div.icon-close {
   background-color: white;
 }
 
+#testemonials .container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#testemonials {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 0;
+}
+
 #testemonials blockquote {
   padding: 2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
@@ -380,6 +391,7 @@ nav.show div.icon-close {
   position: relative;
   text-indent: 1.875rem;
   margin-bottom: 1.5rem;
+  color: var(--title-color);
 }
 #testemonials blockquote p span {
   font: 700 3rem serif;
@@ -403,3 +415,85 @@ nav.show div.icon-close {
   clip-path: circle(); /* to make the circle around the image */
   margin-right: 0.5rem;
 }
+
+/* =========== Swiper ==========================*/
+
+.swiper-slide {
+  height: auto;
+  /* paddingt: 4rem para cima e baixoo e 1rem para os lados*/
+  padding: 4rem 1rem;
+}
+
+.swiper-pagination-bullet-ative {
+  background: var(--base-color);
+}
+
+/* =========== contact ==========================*/
+#contact .grid {
+  gap: 4rem;
+}
+
+#contact .text p {
+  margin-bottom: 2rem;
+}
+#contact .button i {
+  font-size: 1.5rem;
+  align-content: center;
+  margin-right: 0.5rem;
+}
+
+#contact ul li i {
+  font-size: 1.5rem;
+  margin-right: 0.625rem;
+}
+
+/*div .links ul li {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}*/
+
+#contact ul.grid {
+  gap: 2rem;
+}
+
+#contact ul li {
+  display: flex;
+  align-items: center;
+}
+
+#contact ul li i {
+  color: var(--base-color);
+}
+
+/*
+div .links ul li .icon-phone {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  color: var(--base-color);
+}
+div .links ul li .icon-map-pin {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  color: var(--base-color);
+}
+
+div .links ul li .icon-mail {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  color: var(--base-color);
+}
+*/
+
+/*
+ background-color: var(--base-color);
+    color: var(--text-color-light);
+    height: 3.5rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2rem;
+    border-radius: 0.25rem;
+    font: 500 1rem 'DM Sans', sans-serif;
+    transition: background 0.3s; 
+
+*/

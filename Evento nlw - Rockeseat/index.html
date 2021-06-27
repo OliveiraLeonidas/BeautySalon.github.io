@@ -9,7 +9,13 @@
     <!-- Icones - i use the iconMoon  -->
     <link rel="stylesheet" href="assets/style.css" />
 
-    <!-- STYLES -->
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- STYLES CSS -->
     <link rel="stylesheet" href="style.css" />
 
     <!-- Fonts -->
@@ -33,10 +39,10 @@
             <li><a class="title" href="#contact">Contato</a></li>
           </ul>
         </div>
-        <!-- /menu -->
         <div class="toggle icon-menu"></div>
         <div class="toggle icon-close"></div>
       </nav>
+      <!-- /menu -->
     </header>
 
     <main>
@@ -148,66 +154,126 @@
       <div class="divider-1"></div>
 
       <!--====== testemonials ================= -->
-
       <section class="section" id="testemonials">
-        <div class="container grid">
+        <!-- use the inspect of the browser-->
+        <!-- container do tipo grid habilita novas funcionalidades, porém não vamos utilizar. Sendo assim, apagamos o grid e irá se tornar um container do tipo block-->
+        <div class="container">
           <header>
             <h2 class="title">Depoimentos de quem já passou por aqui</h2>
           </header>
-          <div class="testemonials"><!--testemonials block -->
-
-            <div class="testemonials"><!-- first testemonial -->
-              <blockquote>
-                <p>
-                  <span>&ldquo;</span>
-                  Depoimento de uma pessoa
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium aspernatur cupiditate incidunt eum atque excepturi maxime, deleniti cum, ullam doloribus adipisci porro, aut nesciunt! Dolor corrupti numquam cum ipsum inventore!
-                </p>
-              </div>
-              <cite>
-                <img src="https://randomuser.me/api/portraits/women/30.jpg" alt="Fotos de Wanessa">
-                Wanessa Souza
-              </cite>
-              </blockquote><!-- /first testemonial -->
-
-              <div class="testemonials"><!-- second testemonial -->
+          <div class="testemonials swiper-container">
+            <!--testemonials block -->
+            <div class="swiper-wrapper">
+              <div class="testemonials swiper-slide">
+                <!-- first testemonial -->
                 <blockquote>
                   <p>
                     <span>&ldquo;</span>
-                    Depoimento de uma pessoa
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium aspernatur cupiditate incidunt eum atque excepturi maxime, deleniti cum, ullam doloribus adipisci porro, aut nesciunt! Dolor corrupti numquam cum ipsum inventore!
+                    Depoimento de uma pessoa Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Laudantium aspernatur
+                    cupiditate incidunt eum atque excepturi maxime, deleniti
+                    cum, ullam doloribus adipisci porro, aut nesciunt! Dolor
+                    corrupti numquam cum ipsum inventore!
                   </p>
-                </div>
-                <cite>
-                  <img src="assets/images/Queen Latifah.jfif" alt="atriz Queen Latifah">
-                  Queen Latifah
-                </cite>
-                </blockquote><!-- /second testemonial -->
-
-                <div class="testemonials"><!-- third testemonial -->
-                  <blockquote>
-                    <p>
-                      <span>&ldquo;</span>
-                      Depoimento de uma pessoa
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium aspernatur cupiditate incidunt eum atque excepturi maxime, deleniti cum, ullam doloribus adipisci porro, aut nesciunt! Dolor corrupti numquam cum ipsum inventore!
-                    </p>
-                  </div>
                   <cite>
-                    <img src="assets/images/Jennifer.jpg" alt="">
-                    Jennifer 
+                    <img
+                      src="https://randomuser.me/api/portraits/women/30.jpg"
+                      alt="Fotos de Wanessa"
+                    />
+                    Wanessa Souza
                   </cite>
-                  </blockquote><!-- /third testemonial -->
-  
+                </blockquote>
+                <!-- /first testemonial -->
+              </div>
 
-          </div><!-- /testemonials block -->
+              <div class="testemonials swiper-slide">
+                <!-- second testemonial -->
+
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Depoimento de uma pessoa Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Laudantium aspernatur
+                    cupiditate incidunt eum atque excepturi maxime, deleniti
+                    cum, ullam doloribus adipisci porro, aut nesciunt! Dolor
+                    corrupti numquam cum ipsum inventore!
+                  </p>
+                  <cite>
+                    <img
+                      src="assets/images/Queen Latifah.jfif"
+                      alt="atriz Queen Latifah"
+                    />
+                    Queen Latifah
+                  </cite>
+                </blockquote>
+                <!-- /second testemonial -->
+              </div>
+
+              <div class="testemonials swiper-slide">
+                <!-- third testemonial -->
+
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Depoimento de uma pessoa Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Laudantium aspernatur
+                    cupiditate incidunt eum atque excepturi maxime, deleniti
+                    cum, ullam doloribus adipisci porro, aut nesciunt! Dolor
+                    corrupti numquam cum ipsum inventore!
+                  </p>
+
+                  <cite>
+                    <img src="assets/images/Jennifer.jpg" alt="" />
+                    Jennifer
+                  </cite>
+                </blockquote>
+                <!-- /third testemonial -->
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+          <!-- /testemonials block -->
         </div>
       </section>
 
       <!--======/ testemonials ================= -->
 
-      <!--====== contact ================= -->
-    </main>
+      <div class="divider-2"></div>
 
+      <!--====== contact ================= -->
+      <section class="section" id="contact">
+        <div class="container grid">
+          <div class="text">
+            <h2 class="title">Entre em Contato com a gente!</h2>
+            <p>
+              Entre em contato com a Beautysalon, queremos tirar suas dúvidas,
+              ouvir suas críticas e sugestões.
+            </p>
+            <a
+              class="button"
+              href="https://api.whatsapp.com/send?phone=+5511998456754&text=oi! Gostaria de agendar um horário"
+              targer="_blank"
+            >
+              <i class="icon-whatsapp"></i>Entrar em contato</a
+            >
+          </div>
+          <div class="links">
+            <ul class="grid">
+              <li><i href="" class="icon-phone"></i> (11) 99845-6754</li>
+              <li><i href="" class="icon-map-pin"></i>R. Amauri Souza, 346</li>
+              <li><i href="" class="icon-mail"></i>contato@beautysalon.com</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--======/ contact ================= -->
+    </main>
+    <!-- Sweiper Javascript -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- ================ API SCROLLREVIEW ================-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--========= Javascript =================-->
     <script src="main.js"></script>
   </body>
 </html>

@@ -15,7 +15,7 @@ alert("No navegador")
 console.log("No terminal")
 
 */
-/*  abre e fecha o menu quando clicar no icone: hamburguer e x */
+/*  abre e fecha o menu quando clicar no icone */
 const nav = document.querySelector('#header nav')
 const toggle = document.querySelectorAll('nav .toggle')
 
@@ -47,3 +47,34 @@ window.addEventListener('scroll', function () {
     header.classList.remove('scroll')
   }
 })
+
+/*========= Testemonials carousel sliders swiper ========================== */
+
+const swiper = new Swiper('.swiper-container', {
+  slidePerView: 1,
+  pagination: {
+    el: '.swiper-pagination'
+  },
+  mousewheel: true,
+  keyboard: true
+})
+
+/* scrollReveal - revelar quando der scroll na página*/
+
+const scrollReveal = ScrollReveal({
+  origin: 'top',
+  distance: '30px',
+  duration: 700,
+  reset: true
+})
+
+scrollReveal.reveal(
+  `
+  #home .text, #home .image, 
+  #about .image, #about .text, 
+  #services header, #services .card, 
+  #testemonials header, #testemonials .testemonials, 
+  #contact .text, #contact .links
+  `,
+  { interval: 100 }
+)
