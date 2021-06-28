@@ -35,10 +35,10 @@ for (const link of links) {
 }
 
 /* mudar o header da página quando der scroll */
-const header = document.querySelector('#header')
-const navHeight = header.offsetHeight
 
-window.addEventListener('scroll', function () {
+function changeHeaderWhenScroll() {
+  const header = document.querySelector('#header')
+  const navHeight = header.offsetHeight
   if (window.scrollY >= navHeight) {
     // scroll é maior que a altura do header
     header.classList.add('scroll')
@@ -46,7 +46,7 @@ window.addEventListener('scroll', function () {
     // menor que a altura do header
     header.classList.remove('scroll')
   }
-})
+}
 
 /*========= Testemonials carousel sliders swiper ========================== */
 
@@ -74,7 +74,25 @@ scrollReveal.reveal(
   #about .image, #about .text, 
   #services header, #services .card, 
   #testemonials header, #testemonials .testemonials, 
-  #contact .text, #contact .links
+  #contact .text, #contact .links, 
+  footer .brand, footer .social
   `,
   { interval: 100 }
 )
+
+/*======= back to top  ================= */
+
+function backToTop() {
+  const backToTopButton = document.querySelector('.back-to-top')
+  if (window.scrollY >= 560) {
+    backToTopButton.classList.add('show')
+  } else {
+    backToTopButton.classList.remove('show')
+  }
+}
+
+/*==== When scroll ==================== */
+window.addEventListener('scroll', function () {
+  changeHeaderWhenScroll()
+  backToTop()
+})
