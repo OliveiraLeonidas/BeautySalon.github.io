@@ -32,6 +32,13 @@ img {
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
+
+  /* fonts */
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
+
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
 }
 
 /*===  BASE ============================ */
@@ -380,7 +387,7 @@ nav.show div.icon-close {
   margin-right: 0;
 }
 
-#testemonials {
+#testemonials header {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   margin-bottom: 0;
@@ -398,10 +405,10 @@ nav.show div.icon-close {
   color: var(--title-color);
 }
 #testemonials blockquote p span {
-  font: 700 3rem serif;
+  font: 700 2.5rem serif;
   position: absolute;
   left: -1.875rem;
-  top: -0.6rem;
+  top: -0.375rem;
   color: var(--base-color);
 }
 
@@ -412,7 +419,6 @@ nav.show div.icon-close {
 }
 
 #testemonials cite img {
-  display: flex;
   width: 2rem;
   height: 2rem;
   object-fit: cover; /* to cover all the space*/
@@ -509,9 +515,8 @@ footer {
 }
 /*nesse caso, o elemento <a> sempre vai ser 'display: inline' e por isso não recebe margin, porém, para habilitar o uso de margin, 
 mude para "displa: inline-block" e com isso, ele ira receber as margens */
-footer .brand.logo {
-  display: inline-block;
-  margin-bottom: 1.5rem;
+footer.section {
+  padding: 4rem;
 }
 
 footer .brand p {
@@ -525,6 +530,13 @@ footer .brand i {
   margin-right: 2rem;
   display: inline-block;
   transition: 0.3s;
+}
+
+/* icons style control */
+footer .social a {
+  display: inline-block;
+  margin-right: 1.5rem;
+  font-size: 1.5rem;
 }
 
 footer .social a i:hover {
@@ -570,3 +582,137 @@ footer .social {
 }
 
 /* ========= MEDIA QUERY (respnsividade) ================= */
+
+/* extra large devices: 1200 > */
+@media (min-width: 1200px) {
+  /* reusable/reusáveis classes */
+  .container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section header,
+  #testemonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    height: 3.125rem;
+  }
+
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 400 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  /* layout */
+
+  main {
+    margin-top: var(--header-height);
+  }
+
+  /* home */
+
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+
+  #home .image {
+    order: 1;
+  }
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /* about */
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+
+  /* services */
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /* tetimonials */
+  #testemonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* contact */
+
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+  }
+
+  #contact.text {
+    max-width: 25rem;
+  }
+
+  /* footer */
+
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+}
+
+/* large devices: 1023 > */
+/* large devices:  992 > */
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+}
+
+/* medium devices: 767 > */
